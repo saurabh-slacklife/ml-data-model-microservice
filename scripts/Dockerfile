@@ -10,9 +10,6 @@ mkdir -p /opt/price-modeling/scripts/ci
 WORKDIR /opt/price-modeling/
 
 COPY . /opt/price-modeling
-COPY scripts/ /opt/price-modeling/
-COPY ci/ /opt/price-modeling/
-COPY cron-job/ /opt/price-modeling/
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
