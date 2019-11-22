@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag flask-data-model-service:$(date +%s)
+      run: docker build ../scripts -t flask-data-model-service:$(date +%s)
