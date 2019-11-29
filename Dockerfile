@@ -1,11 +1,9 @@
 # Author Saurabh Saxena
 FROM python:2.7.15
 
-#RUN apt-get update && apt-get -y install cron
-
 RUN mkdir -p /var/log/ml-price-recommendation-api && \
 mkdir -p /opt/price-modeling/certs/ && \
-mkdir -p /opt/price-modeling/scripts/ci
+mkdir -p /opt/price-modeling/scripts/
 
 WORKDIR /opt/price-modeling/
 
