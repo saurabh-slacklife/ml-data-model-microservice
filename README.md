@@ -50,6 +50,7 @@ The service is Docker'zed. Below are the steps to build and run the Docker image
 
 ```shell script
 # Below command builds the Docker image.
+cd scripts
 docker build -t ml-data-model-rest-service .
 
 # Below command runs the docker image on port 5000.
@@ -65,6 +66,7 @@ Run below commands to run the Microservice from shell script in background.
 
 ```shell script
 export SERVICE_ENV="dev" # Runs the application in Development configuration. Change to "qa" or "prod" based on environment
+cd scripts
 chmod +x start.sh
 nohup ./start.sh &
 ```
