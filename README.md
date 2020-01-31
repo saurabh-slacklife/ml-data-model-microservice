@@ -3,7 +3,7 @@
 >
 >The service also exposes a HTTP GET through which a new trained model can be loaded into the memory. 
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=plastic&color=brightgreen)](https://www.python.org/) [![Version 2.7.15](https://img.shields.io/badge/python-2.7.15-blue.svg?style=plastic&color=brightgreen)](https://www.python.org/downloads/release/python-275//)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=plastic&color=brightgreen)](https://www.python.org/) [![Version 3.7.5](https://img.shields.io/badge/python-3.7.5-blue.svg?style=plastic&color=brightgreen)](https://www.python.org/downloads/release/python-375//)
 
 [![Actions Status](https://github.com/saurabh-slacklife/ml-data-model-microservice/workflows/Docker%20Build/badge.svg)](https://github.com/saurabh-slacklife/ml-data-model-microservice/workflows/Docker%20Build/badge.svg)
 
@@ -25,20 +25,20 @@
 
 ```shell script
 # Install Virtualenv
-pip2 install virtualenv
+pip3 install virtualenv
 
 # Verify Virtualenv installation
 virtualenv --version
 
 # Create directory for virtual
-mkdir -p ~/interpreter/python/2.7/
+mkdir -p ~/interpreter/python/3.7/
 
 # Create virtualenv
-cd ~/interpreter/python/2.7/
-virtualenv -p /usr/bin/python2.7 venv2.7 #Ensure python 2.7 is located /usr/bin/python2.7, if not, then provide the path where python2.7 is installed.
+cd ~/interpreter/python/3.7/
+virtualenv -p /usr/bin/python3.7 venv3.7 #Ensure python 3.7 is located /usr/bin/python3.7, if not, then provide the path where python3.7 is installed.
 
 # Activate virtualenv
-source ~/interpreter/python/2.7/venv2.7/bin/activate
+source ~/interpreter/python/3.7/venv3.7/bin/activate
 
 # Install the requirements in activated virtualenv
 pip -r install requirements.txt

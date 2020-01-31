@@ -1,5 +1,5 @@
 # Author Saurabh Saxena
-FROM python:2.7.15-alpine
+FROM python:3.7.5-alpine
 
 # set environment variables
 ENV APP_HOME=/opt/price-modeling/
