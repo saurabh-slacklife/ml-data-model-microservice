@@ -13,8 +13,8 @@ export PYTHONPATH="$PWD/api"
 echo "APP_CONFIG_FILE: " $APP_CONFIG_FILE
 
 exec gunicorn api.app:app \
-    --certfile /opt/price-modeling/certs/cert.pem \
-    --keyfile /opt/price-modeling/certs/key.pem \
+   # --certfile /opt/price-modeling/certs/cert.pem \
+   # --keyfile /opt/price-modeling/certs/key.pem \
     --access-logfile /var/log/ml-price-recommendation-api/access.log \
     --log-file /var/log/ml-price-recommendation-api/application.log \
     --keep-alive 2 \

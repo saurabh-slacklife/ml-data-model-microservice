@@ -2,7 +2,9 @@ name: Docker Build
 
 on:
   push:
-    branches: master
+    branches:
+      - master
+      -  feature/*
 
 jobs:
 
@@ -13,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build the Docker image
-      run: docker build . --file ./scripts/Dockerfile -t flask-data-model-service:$(date +%s)
+      run: docker build . --file Dockerfile -t flask-data-model-service:$(date +%s)

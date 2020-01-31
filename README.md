@@ -3,20 +3,29 @@
 >
 >The service also exposes a HTTP GET through which a new trained model can be loaded into the memory. 
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![Python 2.7](https://img.shields.io/badge/python-2.7.15-blue.svg)](https://www.python.org/downloads/release/python-2715/)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=plastic&color=brightgreen)](https://www.python.org/) [![Version 2.7.15](https://img.shields.io/badge/python-2.7.15-blue.svg?style=plastic&color=brightgreen)](https://www.python.org/downloads/release/python-275//)
 
 [![Actions Status](https://github.com/saurabh-slacklife/ml-data-model-microservice/workflows/Docker%20Build/badge.svg)](https://github.com/saurabh-slacklife/ml-data-model-microservice/workflows/Docker%20Build/badge.svg)
+
+## Table of contents
+* [Installation](#Installation)
+    * [Setup virtual env](#Setup-virtual-env)
+* [Build and run](#Build-and-run)
+    * [Using Docker](#Using-Docker)
+    * [Using shell script](#Using-shell-script)
+* [Release History](#Release-History)
+* [Contribute](#Contribute)
+
 
 ## Installation
 
 ### Setup virtual env
 
-OS X & Linux:
+####OS X & Linux:
 
-##### Installation 
 ```shell script
 # Install Virtualenv
-pip2.7 install virtualenv
+pip2 install virtualenv
 
 # Verify Virtualenv installation
 virtualenv --version
@@ -26,7 +35,7 @@ mkdir -p ~/interpreter/python/2.7/
 
 # Create virtualenv
 cd ~/interpreter/python/2.7/
-virtualenv -p /usr/bin/python2.7 venv2.7 #Ensure python 2.7 is located /usr/bin/python2.7, if not, then provide the path where python2.7 is installed
+virtualenv -p /usr/bin/python2.7 venv2.7 #Ensure python 2.7 is located /usr/bin/python2.7, if not, then provide the path where python2.7 is installed.
 
 # Activate virtualenv
 source ~/interpreter/python/2.7/venv2.7/bin/activate
@@ -42,42 +51,42 @@ deactivate
 
 ```
 
-## Usage example
+## Build and run
 
-### By Using Docker
+### Using Docker
 
-The service is Docker'zed. Below are the steps to build and run the Docker image. Hence DOcker should be installed on the machine.
+The service is Docker'zed. Below are the steps to build and run the Docker image.
 
 ```shell script
 # Below command builds the Docker image.
-cd scripts
-docker build -t ml-data-model-rest-service .
+docker build -t data-model-service:v1 .
 
 # Below command runs the docker image on port 5000.
 # Sets the SERVICE_ENV environment variable in Docker container.
 # The value "dev" is used to take Development configuration.
-docker run -p 5000:5000 -e SERVICE_ENV=dev ml-data-model-rest-service
+docker run -p 5000:5000 -e PORT=5000 -e SERVICE_ENV=dev data-model-service:v1
 
 ```
 
-### By using shell script
+### Using shell script
 
 Run below commands to run the Microservice from shell script in background.
 
 ```shell script
-export SERVICE_ENV="dev" # Runs the application in Development configuration. Change to "qa" or "prod" based on environment
-cd scripts
+export SERVICE_ENV="dev" # Runs the application in Development configuration. Change to "qa" or "prod" based on environment.
 chmod +x start.sh
-nohup ./start.sh &
+nohup ./scripts/start.sh &
 ```
 
 ## Release History
 
-* 0.0.1
-    * Not yet released.
-    * Work in progress.
+* 1.0.0
+    * Released v1 of Data Model service.
 
-## Contributing
+## Issue List
+[Current Issues](https://github.com/saurabh-slacklife/ml-data-model-microservice/issues)
+
+## Contribute
 
 If you want to be a contributor please follow the below steps.
 
