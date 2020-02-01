@@ -13,6 +13,7 @@
 * [Build and run](#Build-and-run)
     * [Using Docker](#Using-Docker)
     * [Using shell script](#Using-shell-script)
+    * [Logs](#logs)
 * [Release History](#Release-History)
 * [Contribute](#Contribute)
 
@@ -76,6 +77,38 @@ Run below commands to run the Microservice from shell script in background.
 export SERVICE_ENV="dev" # Runs the application in Development configuration. Change to "qa" or "prod" based on environment.
 chmod +x start.sh
 nohup ./scripts/start.sh &
+```
+
+## Logs
+
+### Local system
+```shell script
+# Navigate to path /var/log/ml-price-recommendation-api
+cd /var/log/ml-price-recommendation-api
+
+# Gunicorn access logs path
+tail -f /var/log/ml-price-recommendation-api/access.log
+
+# Application log path
+tail -f /var/log/ml-price-recommendation-api/application.log
+```
+
+### Docker
+```shell script
+# Find the docker CONTAINER_ID based on the Image tag: data-model-service:v1
+docker ps | grep "data-model-service:v1" | cut -d" " -f1
+
+# Access the docker shell
+docker exec -it <CONTAINER_ID> /bin/sh
+
+# Navigate to path /var/log/ml-price-recommendation-api
+cd /var/log/ml-price-recommendation-api
+
+# Gunicorn access logs path
+tail -f /var/log/ml-price-recommendation-api/access.log
+
+# Application log path
+tail -f /var/log/ml-price-recommendation-api/application.log
 ```
 
 ## Release History
