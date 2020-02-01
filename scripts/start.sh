@@ -10,6 +10,8 @@ echo "Environment ${SERVICE_ENV}"
 export APP_CONFIG_FILE=/opt/price-modeling/config/${SERVICE_ENV}.py
 export PYTHONPATH="$PWD/api"
 
+sudo mkdir -p /var/log/ml-price-recommendation-api
+
 echo "APP_CONFIG_FILE: " $APP_CONFIG_FILE
 
 exec gunicorn api.app:app \
